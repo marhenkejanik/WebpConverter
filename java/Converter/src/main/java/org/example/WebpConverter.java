@@ -57,11 +57,9 @@ public class WebpConverter
         String inputFilePath = webpFile.getAbsolutePath();
         String outputFileName = webpFile.getName().replace(".webp", ".png");
         String outputFilePath = targetFolderPath + File.separator + outputFileName;
-
-        // Read the WebP file using OpenCV
+ 
         Mat webpMat = Imgcodecs.imread(inputFilePath);
 
-        // Convert the WebP Mat to PNG format
         Imgcodecs.imwrite(outputFilePath, webpMat);
         webpFile.delete();
     }
