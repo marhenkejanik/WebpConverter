@@ -1,3 +1,4 @@
 # WebpConverter
 Converter for Webp files
-Currently the java version only supports non-animated WebP files
+
+The Java version currently only supports non-animated WebP files
