@@ -23,7 +23,6 @@ public class WebpConverter
 
         while(true) {
             monitorFolder(sourceFolderPath, targetFolderPath);
-            sleepForSeconds(2); // Adding a 2-second delay so it doesnt convert a file that is being downloaded resulting in an error
         }
     }
 
@@ -53,7 +52,8 @@ public class WebpConverter
         }
     }
 
-    private static void convertWebpToPng(File webpFile, String targetFolderPath) {
+    private static void convertWebpToPng(File webpFile, String targetFolderPath)
+    {
         String inputFilePath = webpFile.getAbsolutePath();
         String outputFileName = webpFile.getName().replace(".webp", ".png");
         String outputFilePath = targetFolderPath + File.separator + outputFileName;
@@ -64,16 +64,5 @@ public class WebpConverter
         // Convert the WebP Mat to PNG format
         Imgcodecs.imwrite(outputFilePath, webpMat);
         webpFile.delete();
-    }
-    private static void sleepForSeconds(int seconds)
-    {
-        try
-        {
-            TimeUnit.SECONDS.sleep(seconds);
-        }
-        catch (InterruptedException e)
-        {
-            Thread.currentThread().interrupt();
-        }
     }
 }
